@@ -1,0 +1,459 @@
+/*=========================================
+  Large Desktop (1400px+)
+=========================================*/
+
+@media (min-width:1400px){
+
+.hero h1{
+    max-width:700px;
+}
+
+.container{
+    width:min(90%,1320px);
+}
+
+}
+
+
+/*=========================================
+  Laptop (1200px)
+=========================================*/
+
+@media (max-width:1200px){
+
+.hero-grid,
+.showcase-grid{
+
+    grid-template-columns:1fr;
+    gap:60px;
+
+}
+
+.hero-content{
+
+    text-align:center;
+
+}
+
+.hero p{
+
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+.hero-buttons,
+.hero-stats{
+
+    justify-content:center;
+
+}
+
+.dashboard{
+
+    max-width:850px;
+    margin:auto;
+
+}
+
+.problem-grid,
+.feature-grid,
+.products-grid,
+.testimonial-grid,
+.pricing-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.footer-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.stats-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+/*=========================================
+  Tablet
+=========================================*/
+
+@media (max-width:992px){
+
+.section-title{
+
+    font-size:42px;
+
+}
+
+.hero h1{
+
+    font-size:54px;
+
+}
+
+.navbar{
+
+    position:fixed;
+
+    top:82px;
+
+    left:-100%;
+
+    width:100%;
+
+    background:#fff;
+
+    transition:.35s;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+}
+
+.navbar.active{
+
+    left:0;
+
+}
+
+.navbar ul{
+
+    flex-direction:column;
+
+    padding:40px;
+
+    gap:30px;
+
+}
+
+.nav-buttons{
+
+    display:none;
+
+}
+
+.menu-btn{
+
+    display:block;
+
+}
+
+.workflow-grid{
+
+    flex-direction:column;
+
+}
+
+.arrow{
+
+    transform:rotate(90deg);
+
+}
+
+.comparison-table{
+
+    overflow-x:auto;
+
+}
+
+.table-header,
+.table-row{
+
+    min-width:700px;
+
+}
+
+.cta h2{
+
+    font-size:44px;
+
+}
+
+}
+
+
+/*=========================================
+  Mobile
+=========================================*/
+
+@media (max-width:768px){
+
+section{
+
+    padding:80px 0;
+
+}
+
+.hero{
+
+    padding-top:140px;
+
+}
+
+.hero h1{
+
+    font-size:42px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+.hero-buttons a{
+
+    width:100%;
+
+}
+
+.hero-stats{
+
+    flex-direction:column;
+
+    gap:25px;
+
+    text-align:center;
+
+}
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.problem-grid,
+.feature-grid,
+.products-grid,
+.testimonial-grid,
+.pricing-grid,
+.stats-grid,
+.trusted-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.browser-body{
+
+    flex-direction:column;
+
+}
+
+.browser-sidebar{
+
+    width:100%;
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.browser-sidebar div{
+
+    flex:1;
+
+    margin:0;
+
+}
+
+.browser-content{
+
+    grid-template-columns:1fr;
+
+}
+
+.footer-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.section-title{
+
+    font-size:36px;
+
+}
+
+.showcase-content h2{
+
+    font-size:36px;
+
+}
+
+.cta h2{
+
+    font-size:36px;
+
+}
+
+.price-card.featured{
+
+    transform:none;
+
+}
+
+}
+
+
+/*=========================================
+  Small Mobile
+=========================================*/
+
+@media (max-width:576px){
+
+.container{
+
+    width:92%;
+
+}
+
+.logo{
+
+    font-size:28px;
+
+}
+
+.hero{
+
+    padding-top:120px;
+
+}
+
+.hero h1{
+
+    font-size:34px;
+
+    line-height:1.2;
+
+}
+
+.hero p{
+
+    font-size:16px;
+
+}
+
+.section-title{
+
+    font-size:30px;
+
+}
+
+.dashboard{
+
+    padding:20px;
+
+}
+
+.card{
+
+    padding:18px;
+
+}
+
+.card h2{
+
+    font-size:28px;
+
+}
+
+.problem-card,
+.feature-card,
+.product-box,
+.price-card,
+.testimonial-card{
+
+    padding:25px;
+
+}
+
+.faq-question{
+
+    padding:20px;
+
+    font-size:16px;
+
+}
+
+.cta{
+
+    padding:70px 0;
+
+}
+
+.cta h2{
+
+    font-size:30px;
+
+}
+
+.footer{
+
+    text-align:center;
+
+}
+
+.footer-bottom{
+
+    font-size:14px;
+
+}
+
+}
+
+
+/*=========================================
+  Prevent Overflow
+=========================================*/
+
+html,
+body{
+
+overflow-x:hidden;
+
+}
+
+img{
+
+max-width:100%;
+height:auto;
+
+}
+
+table{
+
+width:100%;
+
+}
+
+button{
+
+white-space:nowrap;
+
+}
+
+.btn-primary,
+.btn-outline{
+
+text-align:center;
+
+justify-content:center;
+
+}
