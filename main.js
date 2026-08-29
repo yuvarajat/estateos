@@ -1,283 +1,68 @@
-/* =====================================================
-   EstateOS Marketing Website
-   main.js
-===================================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
+    const header = document.getElementById("site-header");
+    const menuButton = document.getElementById("menu-button");
+    const navigation = document.getElementById("main-nav");
+    const year = document.getElementById("year");
+    const demoForm = document.getElementById("demo-form");
 
-    /* ===============================
-       Mobile Menu
-    =============================== */
+    const updateHeader = () => header?.classList.toggle("scrolled", window.scrollY > 16);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
 
-    const menuBtn = document.getElementById("menuBtn");
-    const navbar = document.getElementById("navbar");
+    if (year) year.textContent = new Date().getFullYear();
 
-    if (menuBtn && navbar) {
-        menuBtn.addEventListener("click", () => {
-            navbar.classList.toggle("active");
-
-            menuBtn.textContent =
-                navbar.classList.contains("active") ? "✕" : "☰";
-        });
-
-        document.querySelectorAll(".navbar a").forEach(link => {
-            link.addEventListener("click", () => {
-                navbar.classList.remove("active");
-                menuBtn.textContent = "☰";
-            });
-        });
-    }
-
-    /* ===============================
-       Sticky Header Shadow
-    =============================== */
-
-    const header = document.querySelector(".header");
-
-    function handleHeader() {
-        if (window.scrollY > 20) {
-            header.style.boxShadow = "0 10px 30px rgba(15,23,42,.08)";
-        } else {
-            header.style.boxShadow = "none";
-        }
-    }
-
-    handleHeader();
-    window.addEventListener("scroll", handleHeader);
-
-    /* ===============================
-       FAQ Accordion
-    =============================== */
-
-    document.querySelectorAll(".faq-item").forEach(item => {
-
-        const button = item.querySelector(".faq-question");
-
-        button.addEventListener("click", () => {
-
-            document.querySelectorAll(".faq-item").forEach(faq => {
-                if (faq !== item) {
-                    faq.classList.remove("active");
-                }
-            });
-
-            item.classList.toggle("active");
-
-        });
-
-    });
-
-    /* ===============================
-       Counter Animation
-    =============================== */
-
-    const counters = document.querySelectorAll(".stat h2");
-
-    const animateCounter = (counter) => {
-
-        const original = counter.innerText;
-
-        const number = parseInt(original.replace(/[^0-9]/g, ""));
-
-        if (!number) return;
-
-        const suffix = original.replace(/[0-9]/g, "");
-
-        let current = 0;
-
-        const increment = Math.ceil(number / 80);
-
-        const timer = setInterval(() => {
-
-            current += increment;
-
-            if (current >= number) {
-
-                counter.innerText = original;
-
-                clearInterval(timer);
-
-            } else {
-
-                counter.innerText = current + suffix;
-
-            }
-
-        }, 20);
-
+    const closeMenu = () => {
+        navigation?.classList.remove("open");
+        menuButton?.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
     };
 
-    const statsSection = document.querySelector(".stats");
+    menuButton?.addEventListener("click", () => {
+        const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+        menuButton.setAttribute("aria-expanded", String(!isOpen));
+        navigation?.classList.toggle("open", !isOpen);
+        document.body.classList.toggle("menu-open", !isOpen);
+    });
 
-    if (statsSection) {
+    navigation?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+    window.addEventListener("resize", () => { if (window.innerWidth > 860) closeMenu(); });
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
 
-        const statsObserver = new IntersectionObserver(entries => {
+    demoForm?.addEventListener("submit", () => {
+        const name = document.getElementById("demo-name")?.value.trim() || "";
+        const phone = document.getElementById("demo-phone")?.value.trim() || "";
+        const email = document.getElementById("demo-email")?.value.trim() || "";
+        const messageField = document.getElementById("whatsapp-message");
+        const status = document.getElementById("form-status");
 
-            entries.forEach(entry => {
+        if (messageField) {
+            messageField.value = [
+                "Hi EstateOS team, I'd like to request a demo.",
+                "",
+                `Name: ${name}`,
+                `Phone: ${phone}`,
+                `Email: ${email}`
+            ].join("\n");
+        }
 
+        if (status) {
+            status.textContent = "Opening WhatsApp with your demo request…";
+            window.setTimeout(() => { status.textContent = ""; }, 8000);
+        }
+    });
+
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-
-                    counters.forEach(animateCounter);
-
-                    statsObserver.disconnect();
-
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
                 }
-
             });
-
-        }, { threshold: 0.4 });
-
-        statsObserver.observe(statsSection);
-
+        }, { threshold: 0.12 });
+        revealItems.forEach((item) => observer.observe(item));
+    } else {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
     }
-
-    /* ===============================
-       Reveal on Scroll
-    =============================== */
-
-    const revealElements = document.querySelectorAll(
-        ".problem-card, .feature-card, .product-box, .testimonial-card, .price-card, .step"
-    );
-
-    revealElements.forEach(el => {
-
-        el.style.opacity = "0";
-        el.style.transform = "translateY(40px)";
-
-    });
-
-    const revealObserver = new IntersectionObserver(entries => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.style.transition = ".7s ease";
-
-                entry.target.style.opacity = "1";
-
-                entry.target.style.transform = "translateY(0)";
-
-            }
-
-        });
-
-    }, { threshold: 0.2 });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    /* ===============================
-       Smooth Scroll
-    =============================== */
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-        anchor.addEventListener("click", function (e) {
-
-            const target = document.querySelector(this.getAttribute("href"));
-
-            if (!target) return;
-
-            e.preventDefault();
-
-            window.scrollTo({
-
-                top: target.offsetTop - 80,
-
-                behavior: "smooth"
-
-            });
-
-        });
-
-    });
-
-    /* ===============================
-       Active Nav Link
-    =============================== */
-
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".navbar a");
-
-    window.addEventListener("scroll", () => {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const top = section.offsetTop - 120;
-
-            if (scrollY >= top) {
-
-                current = section.getAttribute("id");
-
-            }
-
-        });
-
-        navLinks.forEach(link => {
-
-            link.classList.remove("active");
-
-            if (
-                current &&
-                link.getAttribute("href") === "#" + current
-            ) {
-                link.classList.add("active");
-            }
-
-        });
-
-    });
-
-    /* ===============================
-       Scroll To Top Button
-    =============================== */
-
-    const topBtn = document.createElement("button");
-
-    topBtn.innerHTML = "↑";
-
-    topBtn.className = "scroll-top";
-
-    document.body.appendChild(topBtn);
-
-    Object.assign(topBtn.style, {
-
-        position: "fixed",
-        right: "25px",
-        bottom: "25px",
-        width: "50px",
-        height: "50px",
-        borderRadius: "50%",
-        border: "none",
-        cursor: "pointer",
-        color: "#fff",
-        background: "#2563EB",
-        fontSize: "22px",
-        display: "none",
-        zIndex: "999",
-        boxShadow: "0 10px 25px rgba(37,99,235,.3)"
-
-    });
-
-    window.addEventListener("scroll", () => {
-
-        topBtn.style.display =
-            window.scrollY > 500 ? "block" : "none";
-
-    });
-
-    topBtn.addEventListener("click", () => {
-
-        window.scrollTo({
-
-            top: 0,
-
-            behavior: "smooth"
-
-        });
-
-    });
-
 });

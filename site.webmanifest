@@ -1,0 +1,12 @@
+{
+  "name": "EstateOS",
+  "short_name": "EstateOS",
+  "description": "The operating workspace for modern real estate teams.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070b14",
+  "theme_color": "#4f46e5",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
