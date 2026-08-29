@@ -143,6 +143,36 @@ button { color: inherit; font: inherit; }
 .workflow-list h3 { margin-bottom: 8px; font-size: 26px; }
 .workflow-list p { margin: 0; color: rgba(255,255,255,.58); }
 
+.pricing { position: relative; background: #090e19; }
+.pricing::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 50% 12%, rgba(79,70,229,.14), transparent 26%); }
+.pricing > .container { position: relative; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: 16px; }
+.pricing-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 30px; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.03); overflow: hidden; }
+.pricing-card-featured { border-color: rgba(129,140,248,.44); background: linear-gradient(180deg, rgba(79,70,229,.13), rgba(255,255,255,.035)); box-shadow: 0 25px 65px rgba(0,0,0,.25); }
+.pricing-card-featured::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, #4f46e5, #7c3aed, #06b6d4); }
+.plan-topline { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 32px; }
+.plan-icon { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 12px; background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; font: 800 12px/1 "Manrope", sans-serif; box-shadow: 0 12px 28px rgba(79,70,229,.25); }
+.plan-status { padding: 6px 9px; border: 1px solid rgba(103,232,249,.18); border-radius: 999px; background: rgba(6,182,212,.08); color: #a5f3fc; font-size: 9px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.pricing-card h3 { margin-bottom: 11px; font-size: 28px; }
+.plan-description { min-height: 82px; margin-bottom: 26px; color: var(--muted); font-size: 14px; }
+.plan-price { min-height: 96px; display: flex; flex-direction: column; justify-content: flex-start; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.plan-price strong { font: 750 clamp(2.1rem, 3vw, 3rem)/1.05 "Manrope", sans-serif; letter-spacing: -.055em; }
+.plan-price strong small { font-size: .72em; }
+.plan-price span { margin-top: 7px; color: var(--muted); font-size: 11px; }
+.plan-summary { display: grid; gap: 8px; margin: 20px 0; }
+.plan-summary span { position: relative; padding-left: 16px; color: var(--ink-soft); font-size: 11px; }
+.plan-summary span::before { content: ""; position: absolute; top: .68em; left: 0; width: 5px; height: 5px; border-radius: 50%; background: #06b6d4; box-shadow: 0 0 0 3px rgba(6,182,212,.09); }
+.billing-note { margin: -7px 0 21px; padding: 11px 12px; border-radius: 9px; background: rgba(99,102,241,.09); color: #c7d2fe; font-size: 10px; }
+.plan-includes { margin: 5px 0 28px; }
+.plan-includes > span { display: block; margin-bottom: 13px; color: white; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.plan-includes ul { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.plan-includes li { position: relative; padding-left: 23px; color: var(--ink-soft); font-size: 13px; }
+.plan-includes li::before { content: "\2713"; position: absolute; left: 0; color: #818cf8; font-weight: 800; }
+.pricing-button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 50px; margin-top: auto; padding: 0 20px; border: 1px solid rgba(129,140,248,.35); border-radius: 12px; background: rgba(99,102,241,.07); color: #e0e7ff; font-size: 13px; font-weight: 700; transition: border-color .2s, background .2s, transform .2s; }
+.pricing-button:hover { border-color: #818cf8; background: rgba(99,102,241,.14); transform: translateY(-2px); }
+.pricing-card .button { width: 100%; margin-top: auto; }
+.pricing-footnote { max-width: 760px; margin: 25px auto 0; color: var(--muted); font-size: 11px; text-align: center; }
+
 .principles { background: var(--paper); }
 .principle-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--line); }
 .principle-grid article { min-height: 280px; padding: 38px 36px; border-right: 1px solid var(--line); }

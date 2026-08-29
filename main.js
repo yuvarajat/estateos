@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const navigation = document.getElementById("main-nav");
     const year = document.getElementById("year");
     const demoForm = document.getElementById("demo-form");
+    const demoPlan = document.getElementById("demo-plan");
+    const demoFormTitle = document.getElementById("demo-form-title");
+    const formStatus = document.getElementById("form-status");
 
     const updateHeader = () => header?.classList.toggle("scrolled", window.scrollY > 16);
     updateHeader();
@@ -28,26 +31,38 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", () => { if (window.innerWidth > 860) closeMenu(); });
     document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
 
+    document.querySelectorAll(".plan-cta").forEach((button) => {
+        button.addEventListener("click", () => {
+            const plan = button.dataset.plan || "General enquiry";
+            if (demoPlan) demoPlan.value = plan;
+            if (demoFormTitle) {
+                demoFormTitle.textContent = plan === "Pilot" ? "Start your Pilot trial" : `Enquire about ${plan}`;
+            }
+            if (formStatus) formStatus.textContent = `${plan} selected. Share your details and we’ll take it from here.`;
+        });
+    });
+
     demoForm?.addEventListener("submit", () => {
         const name = document.getElementById("demo-name")?.value.trim() || "";
         const phone = document.getElementById("demo-phone")?.value.trim() || "";
         const email = document.getElementById("demo-email")?.value.trim() || "";
         const messageField = document.getElementById("whatsapp-message");
-        const status = document.getElementById("form-status");
+        const selectedPlan = demoPlan?.value || "General enquiry";
 
         if (messageField) {
             messageField.value = [
                 "Hi EstateOS team, I'd like to request a demo.",
                 "",
+                `Plan: ${selectedPlan}`,
                 `Name: ${name}`,
                 `Phone: ${phone}`,
                 `Email: ${email}`
             ].join("\n");
         }
 
-        if (status) {
-            status.textContent = "Opening WhatsApp with your demo request…";
-            window.setTimeout(() => { status.textContent = ""; }, 8000);
+        if (formStatus) {
+            formStatus.textContent = "Opening WhatsApp with your demo request…";
+            window.setTimeout(() => { formStatus.textContent = ""; }, 8000);
         }
     });
 

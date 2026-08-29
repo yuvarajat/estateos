@@ -43,7 +43,28 @@
             "url": "https://yuvathy.in/",
             "email": "hello@yuvathy.in",
             "telephone": "+91-74181-77976"
-        }
+        },
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Pilot",
+                "price": "0",
+                "priceCurrency": "INR",
+                "description": "Free 30-day EstateOS trial for one company admin and one employee."
+            },
+            {
+                "@type": "Offer",
+                "name": "Essential",
+                "price": "1499",
+                "priceCurrency": "INR",
+                "description": "Per user per month, minimum three users, billed annually. GST additional."
+            },
+            {
+                "@type": "Offer",
+                "name": "Enterprise",
+                "description": "Custom annual commercial plan for larger and multi-branch real estate operations."
+            }
+        ]
     }
     </script>
 </head>
@@ -55,6 +76,7 @@
             <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
                 <a href="#platform">Platform</a>
                 <a href="#workflow">Workflow</a>
+                <a href="#pricing">Pricing</a>
                 <a href="#security">Security</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -149,6 +171,48 @@
             </div>
         </section>
 
+        <section class="section pricing" id="pricing" aria-labelledby="pricing-title">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div><p class="kicker">Simple, transparent plans</p><h2 id="pricing-title">Start small.<br>Scale with confidence.</h2></div>
+                    <p>Try EstateOS free for 30 days, choose an annual plan for a growing team, or speak with us about a tailored enterprise setup.</p>
+                </div>
+                <div class="pricing-grid">
+                    <article class="pricing-card reveal">
+                        <div class="plan-topline"><span class="plan-icon" aria-hidden="true">P</span><span class="plan-status">30-day trial</span></div>
+                        <h3>Pilot</h3>
+                        <p class="plan-description">An EstateOS trial for one company admin and one employee.</p>
+                        <div class="plan-price"><strong>Free</strong><span>30-day trial</span></div>
+                        <div class="plan-summary"><span>1 admin + 1 employee</span><span>100 properties</span><span>6 platform features</span></div>
+                        <div class="plan-includes"><span>Key inclusions</span><ul><li>Deals</li><li>Lead management</li><li>Customer records</li><li>Employee management</li><li>Property management</li></ul></div>
+                        <a class="pricing-button plan-cta" href="#contact" data-plan="Pilot">Start 30-day trial <span aria-hidden="true">&rarr;</span></a>
+                    </article>
+
+                    <article class="pricing-card pricing-card-featured reveal">
+                        <div class="plan-topline"><span class="plan-icon" aria-hidden="true">E</span><span class="plan-status">Billed annually</span></div>
+                        <h3>Essential</h3>
+                        <p class="plan-description">For growing real-estate teams, starting with one admin and two employees.</p>
+                        <div class="plan-price"><strong><small>&#8377;</small>1,499</strong><span>per user / month</span></div>
+                        <div class="plan-summary"><span>Minimum 3 users</span><span>1 admin + 2 employees</span><span>8 platform features</span></div>
+                        <p class="billing-note">&#8377;53,964 + GST, billed annually</p>
+                        <div class="plan-includes"><span>Key inclusions</span><ul><li>Deals</li><li>Lead management</li><li>Customer records</li><li>Employee management</li><li>Property management</li></ul></div>
+                        <a class="button plan-cta" href="#contact" data-plan="Essential">Choose Essential <span aria-hidden="true">&rarr;</span></a>
+                    </article>
+
+                    <article class="pricing-card reveal">
+                        <div class="plan-topline"><span class="plan-icon" aria-hidden="true">E+</span><span class="plan-status">Tailored</span></div>
+                        <h3>Enterprise</h3>
+                        <p class="plan-description">A custom plan for larger, multi-branch and integration-led operations.</p>
+                        <div class="plan-price"><strong>Custom quote</strong><span>Annual commercial agreement</span></div>
+                        <div class="plan-summary"><span>Custom annual plan</span><span>Multi-branch operations</span><span>11 platform features</span></div>
+                        <div class="plan-includes"><span>Key inclusions</span><ul><li>Deals</li><li>Lead management</li><li>WhatsApp integration</li><li>Customer records</li><li>Employee management</li></ul></div>
+                        <a class="pricing-button plan-cta" href="#contact" data-plan="Enterprise">Talk to sales <span aria-hidden="true">&rarr;</span></a>
+                    </article>
+                </div>
+                <p class="pricing-footnote reveal">Prices shown exclude applicable taxes. Essential is billed annually. Enterprise terms are agreed through a custom commercial proposal.</p>
+            </div>
+        </section>
+
         <section class="section principles" id="security" aria-labelledby="principles-title">
             <div class="container">
                 <div class="section-heading compact reveal"><div><p class="kicker">Designed for trust</p><h2 id="principles-title">Serious software.<br>Quiet confidence.</h2></div></div>
@@ -177,7 +241,8 @@
                 </div>
                 <form class="demo-form" id="demo-form" action="https://wa.me/917418177976" method="get" target="_blank">
                     <input type="hidden" name="text" id="whatsapp-message" value="">
-                    <div class="form-heading"><span>Request a demo</span><p>We usually respond within one business day.</p></div>
+                    <input type="hidden" id="demo-plan" value="General enquiry">
+                    <div class="form-heading"><span id="demo-form-title">Request a demo</span><p>We usually respond within one business day.</p></div>
                     <div class="form-field form-field-full">
                         <label for="demo-name">Name</label>
                         <input id="demo-name" type="text" autocomplete="name" placeholder="Your full name" required maxlength="80">
@@ -206,7 +271,7 @@
                 <a class="footer-company" href="https://yuvathy.in/" target="_blank" rel="noopener noreferrer">A product by <strong>Yuvathy Technologies</strong> <span aria-hidden="true">&nearr;</span></a>
             </div>
             <div class="footer-links">
-                <div><h2>Product</h2><a href="#platform">Platform</a><a href="#workflow">Workflow</a><a href="#security">Security</a></div>
+                <div><h2>Product</h2><a href="#platform">Platform</a><a href="#workflow">Workflow</a><a href="#pricing">Pricing</a><a href="#security">Security</a></div>
                 <div><h2>Legal</h2><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/data-deletion/">Data deletion</a></div>
                 <div><h2>Contact</h2><a href="mailto:hello@yuvathy.in">hello@yuvathy.in</a><a href="https://wa.me/917418177976?text=Hi%20EstateOS%20team%2C%20I%27d%20like%20to%20know%20more%20about%20EstateOS." target="_blank" rel="noopener noreferrer">WhatsApp: +91 74181 77976</a></div>
             </div>

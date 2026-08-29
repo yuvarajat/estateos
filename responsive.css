@@ -6,6 +6,8 @@
     .value-grid { grid-template-columns: 1.7fr repeat(4, .7fr); }
     .feature-wide { gap: 36px; }
     .workflow-grid { gap: 65px; }
+    .pricing-grid { gap: 12px; }
+    .pricing-card { padding: 24px; }
 }
 
 @media (max-width: 860px) {
@@ -28,6 +30,9 @@
     .principle-grid article, .principle-grid article:first-child { min-height: auto; padding: 32px 0; border-right: 0; border-bottom: 1px solid var(--line); }
     .principle-grid article:last-child { border-bottom: 0; }
     .principle-grid h3 { margin-top: 28px; }
+    .pricing-grid { grid-template-columns: 1fr; gap: 16px; }
+    .pricing-card { width: min(100%, 650px); margin-inline: auto; padding: 32px; }
+    .plan-description, .plan-price { min-height: 0; }
     .contact-card { grid-template-columns: 1fr; gap: 42px; padding: 58px; }
     .contact-intro > p:not(.kicker) { max-width: 620px; }
     .contact-channels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -79,6 +84,7 @@
     .window-heading h2 { font-size: 16px; }
     .pipeline-labels { gap: 5px; }
     .feature { padding: 25px; }
+    .pricing-card { padding: 25px; }
     .inventory-preview { padding: 12px; }
     .followup-card { right: 25px; bottom: 25px; left: 25px; }
     .footer-links { grid-template-columns: 1fr; }
