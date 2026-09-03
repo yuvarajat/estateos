@@ -8,6 +8,7 @@
     .workflow-grid { gap: 65px; }
     .pricing-grid { gap: 12px; }
     .pricing-card { padding: 24px; }
+    .insight-card > a, .blog-card a { padding: 28px; }
 }
 
 @media (max-width: 860px) {
@@ -40,6 +41,14 @@
     .legal-layout { grid-template-columns: 1fr; gap: 42px; }
     .legal-toc { position: static; columns: 2; }
     .legal-toc strong { column-span: all; }
+    .insight-grid, .blog-grid { grid-template-columns: 1fr; }
+    .insight-card > a, .blog-card a { min-height: 330px; }
+    .insight-topic, .blog-card-meta { margin-top: 42px; }
+    .blog-hero-grid { grid-template-columns: 1fr; gap: 28px; }
+    .blog-principle { grid-template-columns: 1fr; gap: 24px; padding: 42px; }
+    .article-shell { grid-template-columns: 1fr; gap: 42px; }
+    .article-toc { position: static; columns: 2; }
+    .article-toc strong { column-span: all; }
 }
 
 @media (max-width: 650px) {
@@ -75,6 +84,20 @@
     .legal-layout { padding: 55px 0 85px; }
     .legal-toc { columns: 1; }
     .legal-meta { display: grid; gap: 5px; }
+    .blog-hero { padding: 130px 0 62px; }
+    .blog-hero h1 { font-size: clamp(3rem, 14vw, 4.5rem); }
+    .blog-listing { padding: 60px 0 85px; }
+    .blog-principle { padding: 32px 27px; }
+    .article-hero { padding: 115px 0 56px; }
+    .article-hero h1 { font-size: clamp(2.7rem, 12vw, 4.2rem); }
+    .article-dek { font-size: 17px; }
+    .article-shell { padding: 55px 0 85px; }
+    .article-toc { columns: 1; }
+    .article-body { font-size: 16px; }
+    .article-body > p:first-child { font-size: 19px; }
+    .article-body h2 { font-size: 27px; }
+    .article-cta { padding: 28px; }
+    .article-related-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 420px) {
