@@ -8,14 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const demoFormTitle = document.getElementById("demo-form-title");
     const formStatus = document.getElementById("form-status");
 
-    const updateHeader = () => header?.classList.toggle("scrolled", window.scrollY > 16);
-    updateHeader();
-    window.addEventListener("scroll", updateHeader, { passive: true });
+
 
     if (year) year.textContent = new Date().getFullYear();
 
     const closeMenu = () => {
         navigation?.classList.remove("open");
+        if (navigation && window.innerWidth <= 860) navigation.inert = true;
         menuButton?.setAttribute("aria-expanded", "false");
         document.body.classList.remove("menu-open");
     };
@@ -24,11 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const isOpen = menuButton.getAttribute("aria-expanded") === "true";
         menuButton.setAttribute("aria-expanded", String(!isOpen));
         navigation?.classList.toggle("open", !isOpen);
+        if (navigation) navigation.inert = isOpen;
         document.body.classList.toggle("menu-open", !isOpen);
     });
 
     navigation?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-    window.addEventListener("resize", () => { if (window.innerWidth > 860) closeMenu(); });
+    const syncNavigation = () => { closeMenu(); if (navigation) navigation.inert = window.innerWidth <= 860; };
+    syncNavigation();
+    window.addEventListener("resize", syncNavigation);
     document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
 
     document.querySelectorAll(".plan-cta").forEach((button) => {

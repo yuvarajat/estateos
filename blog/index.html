@@ -14,7 +14,7 @@
     <title>Real Estate CRM &amp; Sales Guides | EstateOS Blog</title>
     <meta name="description" content="Practical guides for Indian real estate teams on lead management, follow-ups, property inventory and choosing the right CRM workflow.">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#070b14">
+    <meta name="theme-color" content="#030303">
     <link rel="canonical" href="https://estateos.yuvathy.in/blog/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="manifest" href="/site.webmanifest">
@@ -33,9 +33,7 @@
     <meta name="twitter:image" content="https://estateos.yuvathy.in/og.png">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/responsive.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/fonts/plus-jakarta-sans-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -68,18 +66,21 @@
         ]
     }
     </script>
+    <link rel="stylesheet" href="/marketing.css">
+    <link rel="stylesheet" href="/pages.css">
 </head>
-<body class="blog-page">
+<body class="marketing-page blog-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" id="site-header">
         <div class="container nav-wrap">
-            <a href="/" class="logo" aria-label="EstateOS home">Estate<span>OS</span></a>
+            <a href="/" class="logo" aria-label="EstateOS home"><img class="estateos-mark" src="/favicon.svg" alt="" width="36" height="36"><span class="estateos-wordmark">Estate<span>OS</span></span></a>
             <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
                 <a href="/#platform">Platform</a>
                 <a href="/#workflow">Workflow</a>
                 <a href="/#pricing">Pricing</a>
+                <a href="/#capabilities">Capabilities</a>
                 <a href="/blog/" aria-current="page">Blog</a>
-                <a href="/#contact">Contact</a>
+                <a href="https://app.estateos.yuvathy.in/">Log in ↗</a>
             </nav>
             <a href="/#contact" class="button button-small nav-cta">Request a demo</a>
             <button class="menu-button" id="menu-button" type="button" aria-controls="main-nav" aria-expanded="false"><span>Menu</span><i aria-hidden="true"></i></button>
@@ -89,8 +90,8 @@
     <main id="main">
         <header class="blog-hero">
             <div class="container blog-hero-grid">
-                <div><p class="kicker">EstateOS field notes</p><h1>Better systems.<br><em>Calmer teams.</em></h1></div>
-                <p class="blog-hero-intro">Practical, no-fluff guidance for real estate teams managing more leads, properties and conversations.</p>
+                <div><p class="kicker">EstateOS field notes</p><h1>For the days<br><em>that get busy.</em></h1></div>
+                <p class="blog-hero-intro">A few useful reads on keeping track of buyers, following up after a call and knowing when your team has outgrown a spreadsheet.</p>
             </div>
         </header>
 
@@ -136,14 +137,18 @@
 
     <footer class="site-footer">
         <div class="container footer-top">
-            <div><a href="/" class="logo logo-light" aria-label="EstateOS home">Estate<span>OS</span></a><p>The operating workspace for modern real estate teams.</p><a class="footer-company" href="https://yuvathy.in/" target="_blank" rel="noopener noreferrer">A product by <strong>Yuvathy Technologies</strong> <span aria-hidden="true">&nearr;</span></a></div>
+            <div>
+                <a href="/" class="logo logo-light" aria-label="EstateOS home"><img class="estateos-mark" src="/favicon.svg" alt="" width="36" height="36"><span class="estateos-wordmark">Estate<span>OS</span></span></a>
+                <p>For the calls, visits and follow-ups behind every property deal.</p>
+                <a class="footer-company" href="https://yuvathy.in/" target="_blank" rel="noopener noreferrer">A product by <strong>Yuvathy Technologies</strong> <span aria-hidden="true">&nearr;</span></a>
+            </div>
             <div class="footer-links">
-                <div><h2>Product</h2><a href="/#platform">Platform</a><a href="/#workflow">Workflow</a><a href="/#pricing">Pricing</a><a href="/blog/">Blog</a></div>
-                <div><h2>Legal</h2><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/data-deletion/">Data deletion</a></div>
+                <div><h2>Product</h2><a href="/#platform">Platform</a><a href="/#workflow">Workflow</a><a href="/#pricing">Pricing</a><a href="/#capabilities">Capabilities</a><a href="/blog/">Blog</a></div>
+                <div><h2>Legal</h2><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/cookies/">Cookies</a><a href="/data-deletion/">Data deletion</a></div>
                 <div><h2>Contact</h2><a href="mailto:hello@yuvathy.in">hello@yuvathy.in</a><a href="https://wa.me/917418177976?text=Hi%20EstateOS%20team%2C%20I%27d%20like%20to%20know%20more%20about%20EstateOS." target="_blank" rel="noopener noreferrer">WhatsApp: +91 74181 77976</a></div>
             </div>
         </div>
-        <div class="container footer-bottom"><span>&copy; <span id="year">2026</span> EstateOS</span><span>Built for work that moves.</span></div>
+        <div class="container footer-bottom"><span>&copy; <span id="year">2026</span> EstateOS</span><span>EstateOS by Yuvathy Technologies.</span></div>
     </footer>
     <script src="/main.js" defer></script>
 </body>
