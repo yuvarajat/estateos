@@ -86,3 +86,5 @@ html{scroll-padding-top:125px}.marketing-page{font-family:'Plus Jakarta Sans',sa
   .marketing-page .main-nav { background: #111113; }
   .marketing-page .preview-shell { max-width: 100%; }
 }
+.integration-options { padding: 0 20px 20px; margin: 0; color: #a1a1aa; font-size: 13px; line-height: 1.9; }
+.enterprise-integration-note { color: #a1a1aa; font-size: 11px; line-height: 1.7; margin: 12px 0 20px; }
