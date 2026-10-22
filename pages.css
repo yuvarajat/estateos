@@ -46,10 +46,10 @@
   border: 7px solid #ffffff03; outline: 1px solid #ffffff08;
   border-radius: 28px; background: #111113;
   box-shadow: inset 0 1px #ffffff08;
-  transition: transform .6s var(--curve), background .6s var(--curve);
+  transition: transform var(--motion-ui) var(--curve), background var(--motion-ui) var(--curve);
 }
-.blog-card:first-child { background: #11171a; }
-.blog-card:hover { background: #17171b; border-color: #ffffff03; transform: translateY(-4px); }
+.blog-card:first-child { background: #11171a; }@media (hover: hover) and (pointer: fine) {
+.blog-card:hover { background: #17171b; border-color: #ffffff03; transform: translateY(-4px); }}
 .blog-card a { min-height: 440px; padding: 28px; }
 .blog-card-mark { background: #00b4d80a; border: 0; border-radius: 50%; color: #65cddd; font: 500 11px/1 'Plus Jakarta Sans', sans-serif; }
 .blog-card-meta { color: #a8a8b5; font-size: 10px; font-weight: 500; margin-top: 48px; }
@@ -64,10 +64,10 @@
 .article-table th { background: #ffffff05; font-weight: 500; }
 .article-checklist li { border: 6px solid #ffffff02; border-radius: 18px; outline: 1px solid #ffffff08; }
 .article-related { padding: 80px 0 112px; background: #09090a; }
-.related-card { background: #131315; border: 6px solid #ffffff02; outline: 1px solid #ffffff08; border-radius: 23px; transition: transform .6s var(--curve); }
+.related-card { background: #131315; border: 6px solid #ffffff02; outline: 1px solid #ffffff08; border-radius: 23px; transition: transform var(--motion-ui) var(--curve); }
 .related-card:hover { border-color: #ffffff02; }
 .related-card span { color: #65cddd; font-weight: 500; }
-.breadcrumbs a { transition: color .5s var(--curve); }
+.breadcrumbs a { transition: color var(--motion-ui) var(--curve); }
 .main-nav [aria-current] { color: #ffffff; }
 @media (max-width: 1000px) and (min-width: 861px) {
   .blog-grid { grid-template-columns: 1fr 1fr; }
